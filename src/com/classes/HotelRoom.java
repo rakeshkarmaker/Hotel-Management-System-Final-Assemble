@@ -3,16 +3,16 @@ package com.classes;
 import java.lang.*;
 import com.interfaces.*;
 
-public class HotelRoom implements GuestFunctions
+public class HotelRoom extends Guest
 {
 	protected Guest guest[]=new Guest[100];
 
 	protected int hotelRoomAirConditionPrice[] = new hotelRoomAirConditionPrice[2];
 	protected int totalRoomCost =0;
 
-	String hotelRoomType[]=new hotelRoomType[4];
-	protected int hotelRoomTypePrice[] = new hotelRoomTypePrice[4];
-	String hotelRoomAirConditionType[] = new hotelRoomAirConditionType[2];
+	String[] hotelRoomType=new hotelRoomType[4];
+	protected int[] hotelRoomTypePrice = new int[4];
+	String[] hotelRoomAirConditionType = new String[2];
 
 	hotelRoomType [0] ="Royal Suite";
 	hotelRoomType [1] ="King size Bed";
@@ -160,10 +160,6 @@ public class HotelRoom implements GuestFunctions
 	  }
 
 	}
-
-
-	//public abstract void hotelRoomCost();
-
 
 
 }

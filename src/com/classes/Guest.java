@@ -5,7 +5,7 @@ import com.interfaces.*;
 import java.time.*;
 import java.time.format.DateTimeFormatter;
 
-public class Guest implements GuestFunctions
+public abstract class Guest implements IGuestFunctions
 {
 	protected String guestName;
 	protected int guestPhoneNumber;
@@ -13,6 +13,7 @@ public class Guest implements GuestFunctions
 	protected String guestAddress;
 	protected String guestAgeType;
 	protected int NumberofGuests;
+	protected String checkOutDateString;
 
 	public void SetCheckInTime(int daysOfStay) { //Will set the default check in time which is now and add the days of stay and set the checkout date and time.
 		LocalDate checkInDate = LocalDate.now(); //OUTPUT: 2022-02-02

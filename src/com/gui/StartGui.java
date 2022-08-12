@@ -1,6 +1,8 @@
 package com.gui;
 
-public class StartGui
+import  com.gui.*;
+
+public class StartGui extends Frame1
 {
 	public static void main(String args[])
 	{

@@ -7,7 +7,14 @@ public class CheckOutCalculator {
 	protected int totalcostVAT;
 	protected int cashPaid;
 	protected int returnChange;
-	protected String paymentMethod[] = new paymentMethod[4];
+
+
+	String[] paymentType= new String[4];
+
+	paymentType[0] = "Cash";
+	paymentType[1] = "Mobile Banking";
+	paymentType[2] = "Visa Card";
+	paymentType[3] = "Debit Card";
 
 	public int VATCalculator(int totalCost) {
 

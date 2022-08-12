@@ -3,11 +3,11 @@ package com.classes;
 import java.lang.*;
 import com.interfaces.*;
 
-public class PackageAndDiscount extends HotelRoom implements GuestFunctions
+public class PackageAndDiscount extends HotelRoom implements IPackageFunctions
 {
     public int TotalPackageCost=0;
-    public int TotalPackageDiscount=0;
-    String RoomPackageType[]=new RoomPackageType[4];
+    public int TotalPackageDiscountCost=0;
+    String[] RoomPackageType = new String[4];
 
     RoomPackageType [1] ="Honnymoon Package";
     RoomPackageType [2] ="Group Tour Package";
@@ -15,7 +15,7 @@ public class PackageAndDiscount extends HotelRoom implements GuestFunctions
 
     int RoomPackageCost[]=new RoomPackageCost[4];
 
-    public int PackageCalculation(int packageIndex){
+    public int PackageCalculation(int packageIndex){  //will return The Actual total cost of the Pakages
 
         switch(packageIndex) {
             case 1:  //Honnymoon
@@ -44,22 +44,22 @@ public class PackageAndDiscount extends HotelRoom implements GuestFunctions
         }
 
     }
-    public int PackageDiscountCalculation(int packageIndex){
+    public int PackageDiscountCalculation(int packageIndex){ //will return The discounted price for packages
 
         switch(packageIndex) {
             case 1:
-                TotalPackageDiscount = TotalPackageCost * (1-0.88);
-                return TotalPackageDiscount;
+                TotalPackageDiscountCost = TotalPackageCost * 0.88;
+                return TotalPackageDiscountCost;
                 break;
 
             case 2:
-                TotalPackageDiscount = TotalPackageCost * (1-0.92);
-                return TotalPackageDiscount;
+                TotalPackageDiscountCost = TotalPackageCost * 0.92;
+                return TotalPackageDiscountCost;
                 break;
 
             case 3:
-                TotalPackageDiscount = TotalPackageCost * (1-0.90);
-                return TotalPackageDiscount;
+                TotalPackageDiscountCost = TotalPackageCost * 0.90;
+                return TotalPackageDiscountCost;
                 break;
             default:
                 return 0;

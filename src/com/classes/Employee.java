@@ -1,13 +1,13 @@
 package com.classes;
 
 import java.lang.*;
-import interfaces.*;
 
-public class Employee
+
+public abstract class  Employee
 {
 	protected String employeeName;
 	protected int employeeSalary;
-	protected String employeeNumber;
+	protected String employeePhoneNumber;
 	protected String employeePost;
 
 	public void setEName(String employeeName)
@@ -28,13 +28,13 @@ public class Employee
 		return employeeSalary;
 	}
 
-	public void setENumber(String employeeNumber)
+	public void setENumber(String employeePhoneNumber)
 	{
-		this.employeeNumber=employeeNumber;
+		this.employeePhoneNumber=employeePhoneNumber;
 	}
 	public String getENumber()
 	{
-		return employeeNumber;
+		return employeePhoneNumber;
 	}
 
 	public void setPost(String employeePost)
