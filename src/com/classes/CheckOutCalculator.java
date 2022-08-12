@@ -1,6 +1,7 @@
 package com.classes;
 
 import java.lang.*;
+import java.lang.String;
 import com.interfaces.*;
 
 public class CheckOutCalculator {
@@ -17,10 +18,6 @@ public class CheckOutCalculator {
 	paymentType[3] = "Debit Card";
 
 
-
-
-
-
 	public int VATCalculator(int totalCost) {
 
 		totalcostVAT = totalCost * 0.15;
@@ -34,6 +31,7 @@ public class CheckOutCalculator {
 			return returnChange;
 		} else {
 			System.out.println("Error. Sorry your paid amount is not sufficient to complete this transction.");
+			return 0;
 		}
 
 	}

@@ -30,7 +30,7 @@ public class PackageAndDiscount extends HotelRoom implements IPackageFunctions
 
                 return TotalPackageCost;
 
-                break 3://Business
+            case 3://Business
                 RoomPackageCost = TotalRoomCostCalculator(1,3); //Royal suite +Ac+
                 TotalPackageCost = RoomPackageCost + 7000; //5000 taka for services like car trave;,pickup,buffet etc.
                 return TotalPackageCost;
