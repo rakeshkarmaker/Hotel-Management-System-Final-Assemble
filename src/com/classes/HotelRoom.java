@@ -33,39 +33,40 @@ public class HotelRoom extends Guest
 	hotelRoomAirConditionPrice[1]= 1000;
 
 
-
 	public int TotalRoomCostCalculator(int ac , int hotelRoomIndex){  //Calculates the total cost
 
 		if(hotelRoomIndex = 0){
 			System.out.println(hotelRoomType[hotelRoomIndex]);
 			return hotelRoomTypePrice[hotelRoomIndex];
-		}
-		else if(hotelRoomIndex = 1){
+
+		} else if(hotelRoomIndex = 1){
 			System.out.println(hotelRoomType[hotelRoomIndex]);
 			return hotelRoomTypePrice[hotelRoomIndex];
-		}
-		else if(hotelRoomIndex = 2){
+
+		} else if(hotelRoomIndex = 2){
 			System.out.println(hotelRoomType[hotelRoomIndex]);
 
 			if(ac = 0){
 				System.out.println(hotelRoomAirConditionType[ac]);
-			}
-			else if (ac = 1){
+
+			} else if (ac = 1){
 				System.out.println(hotelRoomAirConditionType[ac]);
 			}
 			return hotelRoomTypePrice[hotelRoomIndex]+hotelRoomAirConditionPrice[ac];
-		}
-		else if(hotelRoomIndex = 3){
+
+		} else if(hotelRoomIndex = 3){
+
 			System.out.println(hotelRoomType[hotelRoomIndex]);
 			if(ac = 0){
 				System.out.println(hotelRoomAirConditionType[ac]);
-			}
-			else if (ac = 1){
+
+			} else if (ac = 1){
 				System.out.println(hotelRoomAirConditionType[ac]);
+
 			}
 			return hotelRoomTypePrice[hotelRoomIndex]+hotelRoomAirConditionPrice[ac];
-		}
-		else{
+
+		} else{
 			System.out.println("Error Room Type");
 		}
 

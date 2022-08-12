@@ -1,8 +1,10 @@
 package com.classes;
+
+import com.interfaces.*;
 import java.lang.*;
 
 
-public class Admin {
+public class Admin implements IAdmin{
 
     protected StringBuffer adminName = new StringBuffer("Rakesh Karmaker");
     protected StringBuffer userName = new StringBuffer("Admin");
@@ -21,12 +23,9 @@ public class Admin {
 
         this.securityQuestion.setLength(0);
         this.securityQuestion.append(securityQuestion);
-
-    }
-    public StringBuffer getAdminDetailz(){
-
-        adminName
-    }
-+"  "+userName+"  "+password+"  "+securityQuestion);
+    }  public StringBuffer getAdminName() {return adminName;}
+    public StringBuffer getuserName() {return userName;}
+    public int getpassword() {return password;}
+    public StringBuffer getsecurityQuestion() {return securityQuestion;}
 
 }

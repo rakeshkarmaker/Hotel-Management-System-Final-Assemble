@@ -6,7 +6,7 @@ import java.lang.*;
 public abstract class  Employee
 {
 	protected String employeeName;
-	protected int employeeSalary;
+	protected float employeeSalary;
 	protected String employeePhoneNumber;
 	protected String employeePost;
 
@@ -19,11 +19,11 @@ public abstract class  Employee
 		return employeeName;
 	}
 
-	public void setSalary(int employeeSalary)
+	public void setSalary(float employeeSalary)
 	{
 		this.employeeSalary=employeeSalary;
 	}
-	public int getEmployeeSalary()
+	public float getEmployeeSalary()
 	{
 		return employeeSalary;
 	}
@@ -45,6 +45,4 @@ public abstract class  Employee
 	{
 		return employeePost;
 	}
-
-	public abstract void showEmployeeDetails();
 }

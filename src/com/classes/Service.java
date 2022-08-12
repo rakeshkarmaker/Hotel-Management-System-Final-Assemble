@@ -19,14 +19,10 @@ public class Service
 	service[2]=500; //Laundry Service
 	service[3]=2000; //Transportation Service
 
-
 	//?????
 	protected String roomService;
 	protected String foodService;
 	protected String laundryService;
 	protected String transportationService;
-
-	public abstract void showAllServices();
-	public abstract void serviceCost();
 
 }

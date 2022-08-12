@@ -4,11 +4,11 @@ import java.lang.*;
 import java.lang.String;
 import com.interfaces.*;
 
-public class CheckOutCalculator {
-	protected int totalcostVAT;
-	protected int cashPaid;
-	protected int returnChange;
-
+public class CheckOutCalculator extends Service,HotelRoom {
+	protected float totalCost
+	protected float VAT;
+	protected float cashPaid;
+	protected float returnChange;
 
 	String[] paymentType= new String[4];
 
@@ -18,22 +18,22 @@ public class CheckOutCalculator {
 	paymentType[3] = "Debit Card";
 
 
-	public int VATCalculator(int totalCost) {
+	public void setVAT() {
 
-		totalcostVAT = totalCost * 0.15;
-		return totalcostVAT;
-	}
+		VAT = totalCost * 0.15;
 
-	public int returnChangeCalculator(int CashPaid, int totalCost) {
+	} public float getVAT(){ return VAT; }
+
+	public int returnChangeCalculator(float CashPaid) {
 
 		if (CashPaid >= totalCost) {
 			returnChange = CashPaid - totalCost;
 			return returnChange;
+
 		} else {
 			System.out.println("Error. Sorry your paid amount is not sufficient to complete this transction.");
 			return 0;
 		}
-
 	}
 
 }
