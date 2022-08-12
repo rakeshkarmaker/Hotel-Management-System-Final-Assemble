@@ -9,33 +9,31 @@ public class PackageAndDiscount extends HotelRoom implements IPackageFunctions
     public int TotalPackageDiscountCost=0;
     String[] RoomPackageType = new String[4];
 
-    RoomPackageType [1] ="Honnymoon Package";
-    RoomPackageType [2] ="Group Tour Package";
-    RoomPackageType [3] ="Business Trip Package";
+    RoomPackageType [1] ="Honnymoon Package || 12% Discount";
+    RoomPackageType [2] ="Group Tour Package || 8% Discount";
+    RoomPackageType [3] ="Business Trip Package || 10% Discount";
 
-    int RoomPackageCost[]=new RoomPackageCost[4];
+    int RoomPackageCost = 0;
 
-    public int PackageCalculation(int packageIndex){  //will return The Actual total cost of the Pakages
+    public int PackageCalculation(int packageIndex){  //Returns Original Price
 
         switch(packageIndex) {
             case 1:  //Honnymoon
-                 int RoomPackageCost [packageIndex] = TotalRoomCostCalculator(1,0); //Royal suite +Ac+
+                RoomPackageCost = TotalRoomCostCalculator(1,0); //Royal suite +Ac+
                 TotalPackageCost = RoomPackageCost+ 5000; //5000 taka for services like car trave;,pickup,buffet etc.
-                TotalPackageCost *= 0.88;
 
                 return TotalPackageCost;
 
             case 2: //Group Tour
-                int RoomPackageCost [packageIndex] = TotalRoomCostCalculator(1,0); //King size +Ac+
-                TotalPackageCost = (RoomPackageCost*NumberofGuests) + 10000; //5000 taka for services like car trave;,pickup,buffet etc.
-                TotalPackageCost *= 0.92;
+                RoomPackageCost = TotalRoomCostCalculator(1,0); //King size +Ac+
+                TotalPackageCost = RoomPackageCost + 10000; //5000 taka for services like car trave;,pickup,buffet etc.
 
                 return TotalPackageCost;
 
                 break 3://Business
-                int RoomPackageCost [packageIndex] = TotalRoomCostCalculator(1,3); //Royal suite +Ac+
-            TotalPackageCost = (RoomPackageCost*NumberofGuests) + 7000; //5000 taka for services like car trave;,pickup,buffet etc.
-            TotalPackageCost *= 0.90;
+                RoomPackageCost = TotalRoomCostCalculator(1,3); //Royal suite +Ac+
+                TotalPackageCost = RoomPackageCost + 7000; //5000 taka for services like car trave;,pickup,buffet etc.
+                return TotalPackageCost;
 
             break;
 

@@ -34,18 +34,18 @@ public class HotelRoom extends Guest
 
 
 
-	public int TotalRoomCostCalculator(int ac , int hotelRoomType){  //Calculates the total cost
+	public int TotalRoomCostCalculator(int ac , int hotelRoomIndex){  //Calculates the total cost
 
-		if(hotelRoomType = 0){
-			System.out.println(hotelRoomType[hotelRoomType]);
-			return hotelRoomTypePrice[hotelRoomType];
+		if(hotelRoomIndex = 0){
+			System.out.println(hotelRoomType[hotelRoomIndex]);
+			return hotelRoomTypePrice[hotelRoomIndex];
 		}
-		else if(hotelRoomType = 1){
-			System.out.println(hotelRoomType[hotelRoomType]);
-			return hotelRoomTypePrice[hotelRoomType];
+		else if(hotelRoomIndex = 1){
+			System.out.println(hotelRoomType[hotelRoomIndex]);
+			return hotelRoomTypePrice[hotelRoomIndex];
 		}
-		else if(hotelRoomType = 2){
-			System.out.println(hotelRoomType[hotelRoomType]);
+		else if(hotelRoomIndex = 2){
+			System.out.println(hotelRoomType[hotelRoomIndex]);
 
 			if(ac = 0){
 				System.out.println(hotelRoomAirConditionType[ac]);
@@ -53,17 +53,17 @@ public class HotelRoom extends Guest
 			else if (ac = 1){
 				System.out.println(hotelRoomAirConditionType[ac]);
 			}
-			return hotelRoomTypePrice[hotelRoomType]+hotelRoomAirConditionPrice[ac];
+			return hotelRoomTypePrice[hotelRoomIndex]+hotelRoomAirConditionPrice[ac];
 		}
-		else if(hotelRoomType = 3){
-			System.out.println(hotelRoomType[hotelRoomAirConditionType]);
+		else if(hotelRoomIndex = 3){
+			System.out.println(hotelRoomType[hotelRoomIndex]);
 			if(ac = 0){
 				System.out.println(hotelRoomAirConditionType[ac]);
 			}
 			else if (ac = 1){
 				System.out.println(hotelRoomAirConditionType[ac]);
 			}
-			return hotelRoomTypePrice[hotelRoomType]+hotelRoomAirConditionPrice[ac];
+			return hotelRoomTypePrice[hotelRoomIndex]+hotelRoomAirConditionPrice[ac];
 		}
 		else{
 			System.out.println("Error Room Type");

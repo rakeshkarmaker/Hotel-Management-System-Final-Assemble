@@ -16,6 +16,11 @@ public class CheckOutCalculator {
 	paymentType[2] = "Visa Card";
 	paymentType[3] = "Debit Card";
 
+
+
+
+
+
 	public int VATCalculator(int totalCost) {
 
 		totalcostVAT = totalCost * 0.15;
