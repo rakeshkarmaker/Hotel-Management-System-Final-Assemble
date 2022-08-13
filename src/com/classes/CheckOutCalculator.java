@@ -4,7 +4,7 @@ import java.lang.*;
 import java.lang.String;
 import com.interfaces.*;
 
-public class CheckOutCalculator extends Service,HotelRoom,Service ,PackageAndDiscount {
+public class CheckOutCalculator extends Service,HotelRoom i {
 	protected float totalCost =0;
 	protected float VAT;
 	protected float cashPaid;
