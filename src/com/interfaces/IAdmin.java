@@ -8,4 +8,5 @@ public interface IAdmin {
      StringBuffer getuserName();
      int getpassword();
      StringBuffer getsecurityQuestion();
+     int passwordVerification(String usrName, String pass);
 }

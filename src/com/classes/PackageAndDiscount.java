@@ -7,7 +7,7 @@ public class PackageAndDiscount extends Service
 {
     public int TotalPackageCost=0;
     public int PackageDiscount=0;
-    String[] RoomPackageType = new String[4];+
+    String[] RoomPackageType = new String[4];
 
     RoomPackageType [1] ="Honnymoon Package || 12% Discount";
     RoomPackageType [2] ="Group Tour Package || 8% Discount";

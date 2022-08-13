@@ -17,7 +17,7 @@ public class CheckOutCalculator extends PackageAndDiscount {
 	paymentType[2] = "Visa Card";
 	paymentType[3] = "Debit Card";
 
-	CheckOutCalculator(boolean index){ //index 0 means hotel room and service || index 1 means Package
+	CheckOutCalculator(int index){ //index 0 means hotel room and service || index 1 means Package
 
 		switch (index){
 			case 0:

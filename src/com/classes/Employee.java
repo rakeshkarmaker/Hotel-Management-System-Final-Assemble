@@ -1,8 +1,10 @@
 package com.classes;
+import com.interfaces.IEmployee;
+
 import java.lang.*;
 
 
-public abstract class  Employee
+public abstract class  Employee implements IEmployee
 {
 	protected String employeeName;
 	protected float employeeSalary;
