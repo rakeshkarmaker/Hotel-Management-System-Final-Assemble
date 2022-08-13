@@ -4,8 +4,8 @@ import java.lang.*;
 import java.lang.String;
 import com.interfaces.*;
 
-public class CheckOutCalculator extends Service,HotelRoom {
-	protected float totalCost
+public class CheckOutCalculator extends HotelRoom,Service,PackageAndDiscount {
+	protected float totalCost =0;
 	protected float VAT;
 	protected float cashPaid;
 	protected float returnChange;
@@ -17,6 +17,20 @@ public class CheckOutCalculator extends Service,HotelRoom {
 	paymentType[2] = "Visa Card";
 	paymentType[3] = "Debit Card";
 
+	CheckOutCalculator(boolean index){ //index 0 means hotel room and service || index 1 means Package
+
+		switch (index){
+			case 0:
+			totalCost = 0;
+			totalCost = totalRoomCost+totalServiceCost;
+			break;
+
+			case 1:
+				totalCost = 0;
+				totalCost =
+
+		}
+	}
 
 	public void setVAT() {
 

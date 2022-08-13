@@ -12,7 +12,6 @@ public abstract class Guest implements IGuestFunctions
 	protected String guestGender;
 	protected String guestAddress;
 	protected String guestAgeType;
-	protected int NumberofGuests;
 	protected String checkOutDateString;
 
 	public void SetCheckInTime(int daysOfStay) { //Will set the default check in time which is now and add the days of stay and set the checkout date and time.

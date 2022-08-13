@@ -8,7 +8,7 @@ public class Admin implements IAdmin{
 
     protected StringBuffer adminName = new StringBuffer("Rakesh Karmaker");
     protected StringBuffer userName = new StringBuffer("Admin");
-    protected int password = 12345678;
+    protected int password = 12345678; //string
     protected StringBuffer securityQuestion = new StringBuffer("Cat");
 
     public void setAdminDetails(String adminName,String userName,int password,String securityQuestion){
@@ -27,5 +27,6 @@ public class Admin implements IAdmin{
     public StringBuffer getuserName() {return userName;}
     public int getpassword() {return password;}
     public StringBuffer getsecurityQuestion() {return securityQuestion;}
+
 
 }
