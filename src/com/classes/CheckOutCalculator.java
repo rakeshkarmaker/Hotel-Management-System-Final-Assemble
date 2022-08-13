@@ -4,7 +4,7 @@ import java.lang.*;
 import java.lang.String;
 import com.interfaces.*;
 
-public class CheckOutCalculator extends HotelRoom,Service,PackageAndDiscount {
+public class CheckOutCalculator extends Service,HotelRoom,Service ,PackageAndDiscount {
 	protected float totalCost =0;
 	protected float VAT;
 	protected float cashPaid;
@@ -22,7 +22,7 @@ public class CheckOutCalculator extends HotelRoom,Service,PackageAndDiscount {
 		switch (index){
 			case 0:
 			totalCost = 0;
-			totalCost = totalRoomCost+totalServiceCost;
+			totalCost = totalRoomCost +totalServiceCost;
 			break;
 
 			case 1:

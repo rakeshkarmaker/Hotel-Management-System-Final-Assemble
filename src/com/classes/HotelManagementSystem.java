@@ -6,10 +6,10 @@ public class HotelManagementSystem {
     Guest[] guest = new Guest[1000];
 
 
-    public void guestCheckIn(String guestName,int guestPhoneNumber,String guestGender,String guestAddress,String guestAgeType,CheckOutCalculator totalcost)
+    public void guestCheckIn(String guestName,int guestPhoneNumber,String guestGender,String guestAddress,String guestAgeType,CheckOutCalculator objCheckout)
     {
         int flag = 0;
-        guest = new guest(a);
+        guest = new guest();
         for(int i=0; i<guest.length; i++)
         {
             if(guest[i] == null)
@@ -26,6 +26,10 @@ public class HotelManagementSystem {
         if(flag == 1){showMessageDialog(null, "Interstion Successful!");}
         else {showMessageDialog(null, "Unsuccesful operation!");}
     }
+
+
+
+
     /*
     	protected String guestName;
 	protected int guestPhoneNumber;
