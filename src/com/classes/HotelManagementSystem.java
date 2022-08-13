@@ -1,54 +1,67 @@
 package com.classes;
+import java.lang.*;
 
-import static javax.swing.JOptionPane.showMessageDialog;
-
-public class HotelManagementSystem {
+public class HotelManagementSystem
+{
     Guest[] guest = new Guest[1000];
 
-
-    public void guestCheckIn(String guestName,int guestPhoneNumber,String guestGender,String guestAddress,String guestAgeType,CheckOutCalculator objCheckout)
+    public void guestCheckIn(Guest g)
     {
         int flag = 0;
-        guest = new guest();
+        //guest = new guest();
         for(int i=0; i<guest.length; i++)
         {
             if(guest[i] == null)
             {
-                guest[i] = guest;
-                guest[i].setGuestName(guestName); //searrch == ... index free /null
-                guest[i].setGuestName(guestName);
-                guest[i].setGuestName(guestName);
-                guest[i].setGuestName(guestName);
+                guest[i] = g;
                 flag = 1;
                 break;
             }
         }
-        if(flag == 1){showMessageDialog(null, "Interstion Successful!");}
-        else {showMessageDialog(null, "Unsuccesful operation!");}
+        if(flag == 1){System.out.println("Interstion Successful!");}
+        else {System.out.println("Unsuccesful operation!");}
     }
 
+    public void guestCheckOut(Guest g)
+    {
+        int flag = 0;
+        for(int i=0; i<guest.length; i++)
+        {
+            if(guest[i].getGuestName().equals(g))
+            {
+                guest[i] = null;
+                flag = 1;
+                break;
+            }
+        }
+        if(flag == 1){System.out.println("Deletion Successful!");}
+        else{System.out.println("Unsuccesful operation!");}
+    }
 
+    public Guest getGuest(String guestName)
+    {
+        Guest g = null;
 
-
-    /*
-    	protected String guestName;
-	protected int guestPhoneNumber;
-	protected String guestGender;
-	protected String guestAddress;
-	protected String guestAgeType;
-     */
-
-
-
-///ADD REMOVE DELETE MODIFY
-    //FILE HANDLING ... CVS.....2d array.........read write and modify.
-//booking -----guest add
-    //guest add rmv === guest add. arr ob obj.
-
-    /*
-    1. Room booking. //add
-    2.Check in guest (Add) //search if found then checked in else ()
-    3.Check out guest (remove)
-     */
+        for(int i=0; i<guest.length; i++)
+        {
+            if(guest[i] != null)
+            {
+                if(guest[i].getGuestName() == guestName)
+                {
+                    g = guest[i];
+                    break;
+                }
+            }
+        }
+        if(g != null)
+        {
+            System.out.println("Guest Found");
+        }
+        else
+        {
+            System.out.println("Guest Not Found");
+        }
+        return g;
+    }
 
 }

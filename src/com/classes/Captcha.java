@@ -1,6 +1,6 @@
 package com.classes;
 
-import
+import com.interfaces.*;
 
 import java.util.*;
 public class Captcha {
@@ -10,19 +10,28 @@ public class Captcha {
     protected int addition;
 
 
-    Captcha(){
+    Captcha() {
         Random random = new Random(0);
         firstNumber = random.nextInt(100);
         secondNumber = random.nextInt(100);
-        addition = firstNumber+secondNumber;
+        addition = firstNumber + secondNumber;
     }
-    public int getFirstNumber(){ return firstNumber; }
-    public int getSecondNumber(){ return secondNumber;}
 
-    public boolean captchaVerify(int answer){
-        if(answer==addition){
+    public int getFirstNumber() {
+        return firstNumber;
+    }
+
+    public int getSecondNumber() {
+        return secondNumber;
+    }
+
+    public boolean captchaVerify(int answer) {
+        if (answer == addition) {
             return 1;
 
-        }else { return 0; }
+        } else {
+            return 0;
+        }
 
+    }
 }

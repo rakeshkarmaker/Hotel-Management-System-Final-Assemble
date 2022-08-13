@@ -5,7 +5,7 @@ import com.interfaces.*;
 import java.time.*;
 import java.time.format.DateTimeFormatter;
 
-public abstract class Guest implements IGuestFunctions
+public abstract class Guest
 {
 	protected String guestName;
 	protected int guestPhoneNumber;
