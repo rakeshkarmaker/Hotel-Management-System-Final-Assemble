@@ -5,7 +5,7 @@ public interface IEmployee {
     public void setEName(String employeeName);
     public String getEmployeeName();
 
-    public void setSalary;
+    public void setSalary();
     public float getEmployeeSalary();
 
     public void setENumber(String employeePhoneNumber);

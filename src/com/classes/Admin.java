@@ -24,17 +24,16 @@ public class Admin implements IAdmin{
         this.securityQuestion.append(securityQuestion);
     }  public StringBuffer getAdminName() {return adminName;}
     public StringBuffer getuserName() {return userName;}
-    public int getpassword() {return password;}
+    public String getpassword() {return password;}
     public StringBuffer getsecurityQuestion() {return securityQuestion;}
 
 
     public int passwordVerification(String usrName, String pass){  //0 false 1 true
         try
         {
-            if(userName.length() < 8 || password.length(pass) > 16 )
+            if(userName.length() < 8 || password.length() > 16 )
             {
                 throw new MyException();
-                return 0;
             }
             else
             {if(password.equals(usrName) && password.equals(pass)){return 1;

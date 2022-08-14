@@ -25,7 +25,7 @@ public class Captcha {
         return secondNumber;
     }
 
-    public boolean captchaVerify(int answer) {
+    public int captchaVerify(int answer) {
         if (answer == addition) {
             return 1;
 

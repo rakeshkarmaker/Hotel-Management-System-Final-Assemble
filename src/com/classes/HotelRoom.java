@@ -3,16 +3,14 @@ package com.classes;
 import java.lang.*;
 import com.interfaces.*;
 
-public class HotelRoom extends Guest
-{
+public abstract class HotelRoom extends Guest {
 	protected float totalRoomCost;
 	protected float[] hotelRoomAirConditionPrice = new float[2];
-	protected float totalRoomCost =0;
 
 	String[] hotelRoomType=new String[4];
 	protected float[] hotelRoomTypePrice = new float[4];
 	String[] hotelRoomAirConditionType = new String[2];
-
+	HotelRoom(){
 	hotelRoomType [0] ="Royal Suite";
 	hotelRoomType [1] ="King size Bed";
 	hotelRoomType [2] ="Twin Bed";
@@ -28,35 +26,35 @@ public class HotelRoom extends Guest
 
 	hotelRoomAirConditionPrice[0]= 0 ;
 	hotelRoomAirConditionPrice[1]= 1000;
+	totalRoomCost = 0;
+	}
 
-	HotelRoom(){ totalRoomCost = 0; }
+	public float TotalRoomCost(int ac , int hotelRoomIndex){
+		//Calculates the total cost
 
-	public float TotalRoomCost(int ac , int hotelRoomIndex){  //Calculates the total cost
-
-		if(hotelRoomIndex = 0){//Royal suite price
+		if(hotelRoomIndex == 0){//Royal suite price
 			totalRoomCost = hotelRoomTypePrice[hotelRoomIndex];
 			return totalRoomCost;
 
-		} else if(hotelRoomIndex = 1){//King size bed price
+		} else if(hotelRoomIndex == 1){//King size bed price
 			totalRoomCost = hotelRoomTypePrice[hotelRoomIndex];
 			return totalRoomCost;
 
-
-		} else if(hotelRoomIndex = 2){
+		} else if(hotelRoomIndex == 2){
 			if(ac = 0){
 				totalRoomCost = hotelRoomTypePrice[hotelRoomIndex]+hotelRoomAirConditionType[ac];
 
-			} else if (ac = 1){
+			} else if (ac == 1){
 				totalRoomCost = hotelRoomTypePrice[hotelRoomIndex]+hotelRoomAirConditionType[ac];
 			}
 			return totalRoomCost;
 
-		} else if(hotelRoomIndex = 3){
+		} else if(hotelRoomIndex == 3){
 
-			if(ac = 0){
+			if(ac == 0){
 				totalRoomCost = hotelRoomTypePrice[hotelRoomIndex]+hotelRoomAirConditionType[ac];
 
-			} else if (ac = 1){
+			} else if (ac == 1){
 				totalRoomCost = hotelRoomTypePrice[hotelRoomIndex]+hotelRoomAirConditionType[ac];
 
 			}
@@ -68,96 +66,6 @@ public class HotelRoom extends Guest
 
 		}
 
-/*
-	public void addGuest(Guest g)
-	{
-		int flag=0;
-
-		for(int i=0;i<guest.length;i++)
-		{
-			if(guest[i]==null)
-			{
-				guest[i]=g;
-				flag=1;
-				break;
-			}
-		}
-		if(flag==1)
-		{
-			System.out.println("Guest Added");
-		}
-		else 
-		{
-			System.out.println("Could not add guest");
-		}
 	}
-
-	public void removeGuest(Guest g)
-	{
-		int flag=0;
-
-		for(int i=0;i<guest.length;i++)
-		{
-			if(guest[i]==g)
-			{
-				guest[i]=null;
-				break;
-			}
-		}
-		if(flag==1)
-		{
-			System.out.println("Guest Removed");
-		}
-		else 
-		{
-			System.out.println("Could not remove guest");
-		}
-	}
-
-	public void showAllGuests()
-	{
-		for(Guest g: guest)
-		{
-			if(g!=null)
-			{	
-				System.out.println("**********************************");
-     			System.out.println("Guest Name: "+ g.getGuestName());
-				System.out.println("Guest Phone Number: "+ g.getGuestPhoneNumber());
-				System.out.println("Guest Gender: "+ g.getGuestGender());
-				System.out.println("Guest Age Type: "+ g.getGuestAgeType());
-				System.out.println("Guest Address: "+ g.getGuestAddress());
-				System.out.println("----------------------------------");
-
-			}
-		}
-	}
-
-	public Guest getGuest(String guestName,int guestPhoneNumber)
-	{
-	  Guest g = null;
-
-	  for(int i=0;i<guest.length;i++)
-	  {
-	  	if(guest[i]!=null)
-	  	{
-	  		if(guest[i].getGuestName().equals(guestName) && guest[i].getGuestPhoneNumber().equals(guestPhoneNumber))
-	  		{
-	  			g=guest[i];
-	  			break;
-	  		}
-	  	}
-	  }
-
-	  if(g!=null)
-	  {
-	  	System.out.println(g);
-	  }
-	  else 
-	  {
-	  	System.out.println("Guest not found!");
-	  }
-
-	}
-*/
-
 }
+
