@@ -1,4 +1,7 @@
+package com;
+
 import java.awt.*;
+import java.lang.*;
 import java.awt.event.*;
 import javax.swing.*;
 import static javax.swing.JOptionPane.showMessageDialog;
@@ -6,9 +9,9 @@ import static javax.swing.JOptionPane.showMessageDialog;
 public class Frame1 extends JFrame implements ActionListener,MouseListener
 {
     JPanel panel;
-    ImageIcon img,room,service,pd,employee;
+    ImageIcon img,userIcon,adminIcon,guestIcon;
     JButton guestB,adminB;
-    JLabel label,bgImg,rooml,servicel,pdl,employeel;
+    JLabel label,bgImgLabel;
 
     Frame1()
     {
@@ -19,31 +22,33 @@ public class Frame1 extends JFrame implements ActionListener,MouseListener
         panel=new JPanel();
         panel.setLayout(null);
 
-        img=new ImageIcon(this.getClass().getResource("Frame1.png"));
-        bgImg=new JLabel(img);
-        bgImg.setLayout(null);
-        bgImg.setSize(this.getSize());
-        this.add(bgImg);
-       
-        label = new JLabel("Welcome To Our Hotel");
-		label.setBounds(240,110,500,70);
-		label.setForeground(Color.WHITE);
-		label.setFont(new Font("Script MT Bold",Font.PLAIN,40));
-		bgImg.add(label);
+        img=new ImageIcon(this.getClass().getResource("Frame1.gif"));
+        bgImgLabel=new JLabel(img);
+        bgImgLabel.setLayout(null);
+        bgImgLabel.setSize(this.getSize());
+        this.add(bgImgLabel);
 
-        guestB=new JButton("Book Room");
-        guestB.setBounds(350,350,110,35);
-        guestB.addActionListener(this);
-        guestB.addMouseListener(this);
-        guestB.setFocusable(false);
-        bgImg.add(guestB);
-
+        adminIcon=new ImageIcon(this.getClass().getResource("adminIcon.png"));
         adminB=new JButton("Admin Login");
-        adminB.setBounds(350,280,110,35);
+        adminB.setBounds(310,220,180,40);
         adminB.addActionListener(this);
         adminB.addMouseListener(this);
         adminB.setFocusable(false);
-        bgImg.add(adminB);
+        adminB.setFont(new Font("Times New Roman",Font.BOLD,17));
+        adminB.setIcon(adminIcon);
+        adminB.setHorizontalTextPosition(JButton.RIGHT);
+        bgImgLabel.add(adminB);
+
+        guestIcon=new ImageIcon(this.getClass().getResource("guestIcon.png"));
+        guestB=new JButton("Book Room");
+        guestB.setBounds(310,290,180,40);
+        guestB.addActionListener(this);
+        guestB.addMouseListener(this);
+        guestB.setFocusable(false);
+        guestB.setFont(new Font("Times New Roman",Font.BOLD,17));
+        guestB.setIcon(guestIcon);
+        guestB.setHorizontalTextPosition(JButton.RIGHT);
+        bgImgLabel.add(guestB);
 
          this.add(panel);
 

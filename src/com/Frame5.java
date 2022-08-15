@@ -1,17 +1,19 @@
-import java.lang.*;
+package com;
+
+import javax.swing.*;
 import java.awt.*;
 import java.awt.event.*;
-import javax.swing.*;
-import static javax.swing.JOptionPane.showMessageDialog;
 
 public class Frame5 extends JFrame implements ActionListener, MouseListener,KeyListener
 {
     JPanel panel;
     ImageIcon bgimg;
-    JLabel bgImgLabel,userLabel,nameLabel,addressLabel,phnNumberLabel,genderLabel,ageTypeLabel;
+    JLabel bgImgLabel,userLabel,nameLabel,addressLabel,phnNumberLabel,genderLabel,ageTypeLabel,ageWarningLabel;
     JTextField nameTextField,addressTextField,phnNumberTextField;
+    JSpinner ageSpinner;
+    SpinnerNumberModel ageSpinnerModel;
     JButton next,back;
-    JComboBox genderComboBox,ageTypeComboBox;
+    JComboBox genderComboBox;
 
     Frame5()
     {
@@ -60,51 +62,56 @@ public class Frame5 extends JFrame implements ActionListener, MouseListener,KeyL
         bgImgLabel.add(nameTextField);
 
         addressLabel=new JLabel("Address: ");
-        addressLabel.setBounds(210,190,100,40);
+        addressLabel.setBounds(210,175,100,40);
 		addressLabel.setForeground(Color.WHITE);
 		addressLabel.setFont(new Font("Times New Roman",Font.PLAIN,25));
         bgImgLabel.add(addressLabel);
 
         addressTextField=new JTextField();
-        addressTextField.setBounds(410,200,180,30);
+        addressTextField.setBounds(410,185,180,30);
         addressTextField.setFont(new Font("Times New Roman",Font.BOLD,17));
         addressTextField.addKeyListener(this);
         bgImgLabel.add(addressTextField);
 
         phnNumberLabel=new JLabel("Phone Number: ");
-        phnNumberLabel.setBounds(210,260,280,40);
+        phnNumberLabel.setBounds(210,230,280,40);
 		phnNumberLabel.setForeground(Color.WHITE);
 		phnNumberLabel.setFont(new Font("Times New Roman",Font.PLAIN,25));
         bgImgLabel.add(phnNumberLabel);
 
         phnNumberTextField=new JTextField();
-        phnNumberTextField.setBounds(410,270,180,30);
+        phnNumberTextField.setBounds(410,240,180,30);
         phnNumberTextField.setFont(new Font("Times New Roman",Font.BOLD,17));
         bgImgLabel.add(phnNumberTextField);
 
         genderLabel=new JLabel("Gender: ");
-        genderLabel.setBounds(210,330,100,40);
+        genderLabel.setBounds(210,285,100,40);
 		genderLabel.setForeground(Color.WHITE);
         genderLabel.setFont(new Font("Times New Roman",Font.PLAIN,25));
         bgImgLabel.add(genderLabel);
 
         String gender[] = {"Male", "Female", "Other"};
 		genderComboBox = new JComboBox(gender);
-		genderComboBox.setBounds(410, 340, 130, 30);
+		genderComboBox.setBounds(410, 295, 130, 30);
         genderComboBox.setFocusable(false);
 		bgImgLabel.add(genderComboBox);
 
-        ageTypeLabel=new JLabel("Age Type: ");
-        ageTypeLabel.setBounds(210,400,160,40);
+        ageTypeLabel=new JLabel("Age ");
+        ageTypeLabel.setBounds(210,340,160,40);
 		ageTypeLabel.setForeground(Color.WHITE);
         ageTypeLabel.setFont(new Font("Times New Roman",Font.PLAIN,25));
         bgImgLabel.add(ageTypeLabel);
 
-        String ageType[] = {"Adult", "Under 18"};
-		ageTypeComboBox = new JComboBox(ageType);
-		ageTypeComboBox.setBounds(410, 410, 130, 30);
-        ageTypeComboBox.setFocusable(false);
-		bgImgLabel.add(ageTypeComboBox);
+        ageSpinnerModel=new SpinnerNumberModel(18,18,150,1);
+        ageSpinner=new JSpinner(ageSpinnerModel);
+        ageSpinner.setBounds(410,340,50,40);
+        bgImgLabel.add(ageSpinner);
+
+        ageWarningLabel=new JLabel("*Must Be An Adult");
+        ageWarningLabel.setBounds(475,340,180,40);
+        ageWarningLabel.setForeground(Color.yellow);
+        ageWarningLabel.setFont(new Font("Times New Roman",Font.BOLD,20));
+        bgImgLabel.add(ageWarningLabel);
 
         this.add(panel);
     }
@@ -119,12 +126,11 @@ public class Frame5 extends JFrame implements ActionListener, MouseListener,KeyL
         }
         else if(ae.getSource()==next)
         {
-           /*  Frame5 f5=new Frame5();
-            f5.setVisible(true);
-            this.setVisible(false);*/
-            showMessageDialog(null,"Work On Progress! ");
+            Frame7 f7=new Frame7();
+            f7.setVisible(true);
+            this.setVisible(false);
+           // showMessageDialog(null,"Work On Progress! ");
         }
-
     }
 
     public void mouseClicked(MouseEvent me){}
