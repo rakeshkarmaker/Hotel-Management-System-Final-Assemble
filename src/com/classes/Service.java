@@ -5,15 +5,17 @@ import com.interfaces.*;
 
 public abstract class Service extends HotelRoom
 {
-	protected float totalServiceCost=0;
-	protected String[] service=new String[4];
-	protected int[] serviceCost=new int[4];
 
+	protected String[] service=new String[4];
+	protected float[] serviceCost= new float[4];
+	protected float totalServiceCost=0;
+	protected int[] arr = new int[4];
 	Service() {
 		service[0] = "Room Service";
 		service[1] = "Buffet Service";
 		service[2] = "Laundry Service";
 		service[3] = "Transportation Service";
+
 
 		serviceCost[0] = 1000; //Room Service
 		serviceCost[1] = 3500; //Buffet Service
@@ -23,7 +25,10 @@ public abstract class Service extends HotelRoom
 
 
 	public void ServiceCostCalc(int i0,int i1,int i2,int i3){ //24 com otherwise
-		int[] arr = new arr[]{i0,i1,i2,i3};
+		arr[0]=i0;
+		arr[1]=i1;
+		arr[2]=i2;
+		arr[3]=i3;
 
 		for (int i=0;i<=3;i++) {
 
@@ -31,14 +36,14 @@ public abstract class Service extends HotelRoom
 				case 0:
 					continue;
 				case 1:
-					totalServiceCost = Float.parseFloat(totalServiceCost + serviceCost[i]);
+					totalServiceCost = totalServiceCost + serviceCost[i];
 					continue;
 
 				default:
 					throw new IllegalStateException("Unexpected value: " + arr[i]);
 			}
 		}
-	}public float geetServiceCost(){ return totalServiceCost;}
+	}public float getServiceCost(){ return totalServiceCost;}
 
 
 }

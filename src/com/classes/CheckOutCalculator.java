@@ -34,11 +34,11 @@ public abstract class CheckOutCalculator extends PackageAndDiscount {
 
 	public void setVAT() {
 
-		VAT = totalCost * 0.15;
+		VAT = (float) (totalCost * 0.15);
 
 	} public float getVAT(){ return VAT; }
 
-	public int returnChangeCalculator(float CashPaid) {
+	public float returnChangeCalculator(float CashPaid) {
 
 		if (CashPaid >= totalCost) {
 			returnChange = CashPaid - totalCost;

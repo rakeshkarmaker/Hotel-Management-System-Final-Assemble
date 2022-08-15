@@ -4,9 +4,9 @@ import java.lang.*;
 import com.interfaces.*;
 
 public abstract class PackageAndDiscount extends Service {
-    float RoomPackageCost = 0;
-    public int TotalPackageCost = 0;
-    public int PackageDiscount = 0;
+    protected float RoomPackageCost = 0;
+    protected float TotalPackageCost = 0;
+    protected float PackageDiscount = 0;
     String[] RoomPackageType = new String[4];
 
     PackageAndDiscount() {
@@ -16,27 +16,24 @@ public abstract class PackageAndDiscount extends Service {
     }
 
 
-    public int PackageCalculation(int packageIndex) {  //Returns Original Price
+    public float PackageCalculation(int packageIndex) {  //Returns Original Price
 
         switch (packageIndex) {
             case 1:  //Honnymoon
                 RoomPackageCost = TotalRoomCost(1, 0); //Royal suite +Ac+
-                TotalPackageCost = RoomPackageCost + 5000; //5000 taka for services like car trave;,pickup,buffet etc.
-
+                TotalPackageCost = (float) (RoomPackageCost + 5000.00); //5000 taka for services like car trave;,pickup,buffet etc.
                 return TotalPackageCost;
 
             case 2: //Group Tour
                 RoomPackageCost = TotalRoomCost(1, 0); //King size +Ac+
-                TotalPackageCost = RoomPackageCost + 10000; //5000 taka for services like car trave;,pickup,buffet etc.
+                TotalPackageCost = (float) (RoomPackageCost + 10000.00); //5000 taka for services like car trave;,pickup,buffet etc.
 
                 return TotalPackageCost;
 
             case 3://Business
                 RoomPackageCost = TotalRoomCost(1, 3); //Royal suite +Ac+
-                TotalPackageCost = RoomPackageCost + 7000; //5000 taka for services like car trave;,pickup,buffet etc.
+                TotalPackageCost = (float) (RoomPackageCost + 7000.00); //5000 taka for services like car trave;,pickup,buffet etc.
                 return TotalPackageCost;
-
-            break;
 
             default:
                 return 0;
@@ -44,23 +41,21 @@ public abstract class PackageAndDiscount extends Service {
 
     }
 
-    public int PackageDiscountCalculation(int packageIndex) { //will return The discounted price for packages
+    public float PackageDiscountCalculation(int packageIndex) { //will return The discounted price for packages
 
         switch (packageIndex) {
             case 1:
-                PackageDiscount = TotalPackageCost * 0.88;
+                PackageDiscount = (float) (TotalPackageCost * 0.88);
                 return PackageDiscount;
-            break;
 
             case 2:
-                PackageDiscount = TotalPackageCost * 0.92;
+                PackageDiscount = (float) (TotalPackageCost * 0.92);
                 return PackageDiscount;
-            break;
 
             case 3:
-                PackageDiscount = TotalPackageCost * 0.90;
+                PackageDiscount = (float) (TotalPackageCost * 0.90);
                 return PackageDiscount;
-            break;
+
             default:
                 return 0;
         }

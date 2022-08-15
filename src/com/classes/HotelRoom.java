@@ -41,21 +41,21 @@ public abstract class HotelRoom extends Guest {
 			return totalRoomCost;
 
 		} else if(hotelRoomIndex == 2){
-			if(ac = 0){
-				totalRoomCost = hotelRoomTypePrice[hotelRoomIndex]+hotelRoomAirConditionType[ac];
+			if(ac == 0){
+				totalRoomCost = hotelRoomTypePrice[hotelRoomIndex]+hotelRoomAirConditionPrice[ac];
 
 			} else if (ac == 1){
-				totalRoomCost = hotelRoomTypePrice[hotelRoomIndex]+hotelRoomAirConditionType[ac];
+				totalRoomCost = hotelRoomTypePrice[hotelRoomIndex]+hotelRoomAirConditionPrice[ac];
 			}
 			return totalRoomCost;
 
 		} else if(hotelRoomIndex == 3){
 
 			if(ac == 0){
-				totalRoomCost = hotelRoomTypePrice[hotelRoomIndex]+hotelRoomAirConditionType[ac];
+				totalRoomCost = hotelRoomTypePrice[hotelRoomIndex]+hotelRoomAirConditionPrice[ac];
 
 			} else if (ac == 1){
-				totalRoomCost = hotelRoomTypePrice[hotelRoomIndex]+hotelRoomAirConditionType[ac];
+				totalRoomCost = hotelRoomTypePrice[hotelRoomIndex]+hotelRoomAirConditionPrice[ac];
 
 			}
 			return totalRoomCost;

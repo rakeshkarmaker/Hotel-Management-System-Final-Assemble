@@ -49,5 +49,32 @@ public class Admin implements IAdmin{
 
         return 0;
     }
+    /*boolean changePassword(){
+  String pass = ""; //get old password from user
+  int n = 3;
+  while (n-- > 0) {
+    if(pass.equals(Password)) {
+        String newPass = ""; // get new password from user
+        String conNewPass = ""; // confirm new password from user
+        if (newPass.equals(conNewPass)) {
+            Password = newPass;
+            // password changed
+            return true;
+        } else {
+            // wrong confirmation.. password not changed
+            return false;
+        }
+    }
+    else {
+        // tell user to enter the correct old password
+        pass = ""; // ask user for old password again
+    }
+  }
+  // show error message that user entered the old password 3 times incorrectly
+  // and return false
+  return false;
+  }
+     */
+
 
 }
