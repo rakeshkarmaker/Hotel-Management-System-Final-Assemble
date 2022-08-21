@@ -12,7 +12,7 @@ public abstract class Service extends HotelRoom
 	protected int[] arr = new int[4];
 	Service() {
 		service[0] = "Room Service";
-		service[1] = "Buffet Service";
+		service[1] = "Food Service";
 		service[2] = "Laundry Service";
 		service[3] = "Transportation Service";
 

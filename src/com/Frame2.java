@@ -1,5 +1,8 @@
 package com;
 
+import com.classes.Admin;
+import com.interfaces.IAdmin;
+
 import java.lang.*;
 import java.awt.*;
 import java.awt.event.*;
@@ -15,6 +18,7 @@ public class Frame2 extends JFrame implements ActionListener,MouseListener,KeyLi
     JTextField txt;
     JPasswordField pf;
 	int n;
+	int flag;
 
     Frame2()
     {
@@ -104,29 +108,30 @@ public class Frame2 extends JFrame implements ActionListener,MouseListener,KeyLi
     public void actionPerformed(ActionEvent ae)
 	{
 		String command = ae.getActionCommand();
-		
+		Admin admin = new Admin();
+
 		if(logIn.getText().equals(command))
 		{
 			String s1 = txt.getText();
 			String s2 = pf.getText();
+
 			//String s2 = new String(pf.getPassword());
             //String s2= pf.getPassword();
 			//String s2= String.valueOf(pf.getPassword());
-			
-			if(s1.equals("a") && s2.equals("a"))
-			{
+
+			flag = admin.passwordVerification(s1,s2);
+
+			if(flag==1) {
                 Frame3p f3p= new Frame3p();
                 f3p.setVisible(true);
                 this.setVisible(false);
 				showMessageDialog(null,"Log In Successful! ");
-			}
-            else 
-            {
+			} else if(flag==0) {
 				showMessageDialog(null, "Invalid Username or password!");
 				txt.setText("");
 				pf.setText("");
 				txt.requestFocus();
-            }         			
+            }     else {}
 		}
         else if(ae.getSource()==back) 
         {
@@ -187,22 +192,24 @@ public class Frame2 extends JFrame implements ActionListener,MouseListener,KeyLi
 			String s1 = txt.getText();
 			String s2 = pf.getText();
 
-			if(s1.equals("a") && s2.equals("a"))
-			{
+			Admin admin = new Admin();
+			flag = admin.passwordVerification(s1,s2);
+			System.out.println(flag);
+
+			if(flag==1) {
                 Frame3p f3p = new Frame3p();
                 f3p.setVisible(true);
                 this.setVisible(false);
 				showMessageDialog(null,"Log In Successful! ");
-			}
-            else 
-            {
+			} else if(flag==0) {
 				showMessageDialog(null, "Invalid Username or password!");
 				txt.setText("");
 				pf.setText("");
 				txt.requestFocus();
-            }      	
+            }else{ }
+
 		}
 	}
 	public void keyReleased(KeyEvent k){}
-	 
+
 }

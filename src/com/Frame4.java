@@ -1,5 +1,7 @@
 package com;
 
+import com.classes.CheckOutCalculator;
+
 import java.lang.*;
 import java.awt.*;
 import java.awt.event.*;
@@ -19,6 +21,29 @@ public class Frame4 extends JFrame implements ActionListener,MouseListener
     JSpinner roomNumber,numberOfDaysSpinner;
     SpinnerModel spinner,numberOfDaysSpinnerModel;
     JComboBox packageComboBox;
+
+    protected int roomIndex = 0; //0
+    protected int acIndex = 0;
+    protected int roomServiceIndex = 0;
+    protected int foodBuffetIndex = 0;
+    protected int laundryServiceIndex = 0 ;
+    protected int transportationIndex =0 ;
+    protected int packageIndex =0 ;
+
+
+    public void  costCalc(){
+        if (packageIndex=0) {
+            CheckOutCalculator calcObj = new CheckOutCalculator();
+            calcObj.TotalRoomCost(acIndex, roomIndex);
+            calcObj.ServiceCostCalc(roomServiceIndex, foodBuffetIndex, laundryServiceIndex, transportationIndex);
+            calcObj.CheckOutCalculator(0);
+
+        } else if (packageIndex=0){
+
+
+        }
+
+    }
 
     Frame4()
     {
@@ -157,7 +182,6 @@ public class Frame4 extends JFrame implements ActionListener,MouseListener
         service.setForeground(Color.black);
         bgImg.add(service);
 
-        cbRoom=new JCheckBox("Room Service");
         cbRoom.setBounds(750,285,250,35);
         cbRoom.setFont(new Font("Times New Roman",Font.BOLD,16));
         cbRoom.setOpaque(false);
@@ -261,6 +285,7 @@ public class Frame4 extends JFrame implements ActionListener,MouseListener
         }
         else if(packageComboBox.getSelectedIndex()==2)
         {
+
             twinBed.setSelected(true);
             cbFood.setSelected(true);
             spinner.setValue(5);
@@ -275,9 +300,53 @@ public class Frame4 extends JFrame implements ActionListener,MouseListener
         else if(royalSuite.isSelected()==true || kingBed.isSelected()==true)
         {
             ac.setSelected(true);
-        }    
+
+        }  else if (royalSuite.isSelected()==true){
+            roomIndex = 0;
+
+        } else if (kingBed.isSelected()==true){
+            roomIndex = 1;
+
+        } else if (twinBed.isSelected()==true){
+            roomIndex = 2;
+
+        } else if (standard.isSelected()==true){
+            roomIndex = 3;
+
+        } else if (ac.isSelected()==true){ // AC index setting updated by rk
+            acIndex = 1;
+
+        }else if (nonAc.isSelected()==true){
+            acIndex = 0;
+
+        }else if (cbRoom.isSelected()==true){ //service index select setting updated by rk
+            roomServiceIndex = 1;
+
+        }else if (cbFood.isSelected()==true){
+            foodBuffetIndex = 1;
+
+        }else if (cbLaundry.isSelected()==true){
+            laundryServiceIndex = 1;
+
+        }else if (cbTransport.isSelected()==true){
+            transportationIndex = 1;
+
+        }else if (cbRoom.isSelected()==false){ //service index deselect setting updated by rk
+            roomServiceIndex = 0;
+
+        }else if (cbFood.isSelected()==false){
+            foodBuffetIndex = 0;
+
+        }else if (cbLaundry.isSelected()==false){
+            laundryServiceIndex = 0;
+
+        }else if (cbTransport.isSelected()==false){
+            transportationIndex = 0;
+
+        }
+
     }
-    
+
     public void mouseClicked(MouseEvent me){}
     public void mousePressed(MouseEvent me){}
     public void mouseReleased(MouseEvent me){}

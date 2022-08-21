@@ -15,7 +15,7 @@ public class TableFrame extends HotelManagementSystem {
             jt.setBounds(30,40,200,300);
             JScrollPane sp=new JScrollPane(jt);
             f.add(sp);
-            f.setSize(300,400);
+            f.setSize(400,600);
             f.setVisible(true);
         }
 

@@ -6,7 +6,7 @@ public interface IAdmin {
 
      StringBuffer getAdminName();
      StringBuffer getuserName();
-     String getpassword();
+     StringBuffer getpassword();
      StringBuffer getsecurityQuestion();
      int passwordVerification(String usrName, String pass);
 }
