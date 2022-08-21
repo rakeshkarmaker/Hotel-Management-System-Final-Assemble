@@ -14,8 +14,8 @@ public class Frame3p extends JFrame implements ActionListener,MouseListener
 	JTextField insertTextField,removeTextField,searchtTextField;
     JButton logOut,insertButton,removebButton,searchButton,employeebButton,guesButton;
 
-    Frame3p()
-    {
+    Frame3p() {
+
         super("Frame3p Management System");
 		this.setSize(800, 500);
 		this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);

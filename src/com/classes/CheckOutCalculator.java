@@ -29,7 +29,7 @@ public class CheckOutCalculator extends PackageAndDiscount {
 				totalCost = TotalPackageCost;
 
 		}
-	}
+	} public float getTotalCost(){return totalCost;}
 
 	public void setVAT() {
 

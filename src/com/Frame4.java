@@ -16,7 +16,7 @@ public class Frame4 extends JFrame implements ActionListener,MouseListener
     JButton next,back;
     JRadioButton royalSuite,kingBed,twinBed,standard,ac,nonAc,honeymoonR,corporateR,groupTourR;
     ButtonGroup roomTypeBtnGrp,acTypeBtnGrp,packageBtnGrp;
-    JTextField txt,bill,numberOfDaysTextField;
+    JTextField txt,totalCost,numberOfDaysTextField;
     JCheckBox cbRoom,cbFood,cbLaundry,cbTransport;
     JSpinner roomNumber,numberOfDaysSpinner;
     SpinnerModel spinner,numberOfDaysSpinnerModel;
@@ -36,18 +36,19 @@ public class Frame4 extends JFrame implements ActionListener,MouseListener
         if (packageIndex == 0) {
             calcObj.TotalRoomCost(acIndex, roomIndex);
             calcObj.ServiceCostCalc(roomServiceIndex, foodBuffetIndex, laundryServiceIndex, transportationIndex);
-            calcObj.CheckOutCalculator(packageIndex);
+            calcObj.CheckOutCalculator(0);
+            totalCost.setText(String.valueOf(calcObj.getTotalCost()));
 
         } else if (packageIndex >= 1 && packageIndex <=3){
-            calcObj.CheckOutCalculator(packageIndex);
+            calcObj.PackageCalculation(packageIndex);
+            calcObj.CheckOutCalculator(1);
 
-        }
-        else{}
+        } else{}
 
     }
 
-    Frame4()
-    {
+    Frame4() {
+
         super("Frame4 Room Booking");
         this.setSize(930, 650);
         this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
@@ -233,11 +234,11 @@ public class Frame4 extends JFrame implements ActionListener,MouseListener
         cost.setForeground(Color.BLACK);
         bgImg.add(cost);
 
-        bill=new JTextField();
-        bill.setBounds(730,450,120,35);
-        bill.setFont(new Font("Times New Roman",Font.BOLD,20));
-        bill.setEditable(false);
-        bgImg.add(bill);
+        totalCost=new JTextField();
+        totalCost.setBounds(730,450,120,35);
+        totalCost.setFont(new Font("Times New Roman",Font.BOLD,20));
+        totalCost.setEditable(false);
+        bgImg.add(totalCost);
 
         packageLabel=new JLabel("Do You Want Any package: ");
         packageLabel.setBounds(100,370,250,35);
@@ -294,11 +295,13 @@ public class Frame4 extends JFrame implements ActionListener,MouseListener
 
         } else if (royalSuite.isSelected()==true){
             roomIndex = 0;
+            acIndex = 1;
             ac.setSelected(true);
             costCalc();
 
         } else if (kingBed.isSelected()==true){
             roomIndex = 1;
+            acIndex = 1;
             ac.setSelected(true);
             costCalc();
 
