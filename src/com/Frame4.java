@@ -32,16 +32,17 @@ public class Frame4 extends JFrame implements ActionListener,MouseListener
 
 
     public void  costCalc(){
-        if (packageIndex=0) {
-            CheckOutCalculator calcObj = new CheckOutCalculator();
+        CheckOutCalculator calcObj = new CheckOutCalculator();
+        if (packageIndex == 0) {
             calcObj.TotalRoomCost(acIndex, roomIndex);
             calcObj.ServiceCostCalc(roomServiceIndex, foodBuffetIndex, laundryServiceIndex, transportationIndex);
-            calcObj.CheckOutCalculator(0);
+            calcObj.CheckOutCalculator(packageIndex);
 
-        } else if (packageIndex=0){
-
+        } else if (packageIndex >= 1 && packageIndex <=3){
+            calcObj.CheckOutCalculator(packageIndex);
 
         }
+        else{}
 
     }
 
