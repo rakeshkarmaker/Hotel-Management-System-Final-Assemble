@@ -5,7 +5,7 @@ import com.interfaces.*;
 import java.time.*;
 import java.time.format.DateTimeFormatter;
 
-public abstract class Guest
+public class Guest
 {
 	protected String guestName;
 	protected int guestPhoneNumber;
@@ -72,8 +72,5 @@ public abstract class Guest
 	{
 		return guestAgeType;
 	}
-
-	public abstract void showGuestDetails(String guestName,int guestPhoneNumber);
-	public abstract void showAllGuests();
 	
 }
