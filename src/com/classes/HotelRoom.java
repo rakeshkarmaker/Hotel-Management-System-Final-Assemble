@@ -3,7 +3,7 @@ package com.classes;
 import java.lang.*;
 import com.interfaces.*;
 
-public abstract class HotelRoom extends Guest {
+public class HotelRoom extends Guest {
 	protected float totalRoomCost;
 	protected float[] hotelRoomAirConditionPrice = new float[2];
 

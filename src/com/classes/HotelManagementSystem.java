@@ -6,6 +6,7 @@ import com.interfaces.*;
 public class HotelManagementSystem implements ICheckInCheckOutOperations
 {
     Guest[] guest = new Guest[1000];
+    Employee[] employee = new Employee[1000];
 
     public void guestCheckIn(Guest g) {
         int flag = 0;

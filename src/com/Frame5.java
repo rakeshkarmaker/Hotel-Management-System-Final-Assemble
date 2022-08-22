@@ -1,5 +1,7 @@
 package com;
 
+import com.classes.Guest;
+
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.*;
@@ -118,6 +120,23 @@ public class Frame5 extends JFrame implements ActionListener, MouseListener,KeyL
 
     public void actionPerformed(ActionEvent ae)
 	{
+        String gName = nameTextField.getName();
+        String gPhoneNo = phnNumberTextField.getText();
+        String gAddress = addressTextField.getText();
+        int gAge = genderComboBox.getSelectedIndex();
+
+        if(genderComboBox.getSelectedIndex()==1) {
+
+
+        }
+
+
+        Guest guest = new Guest();
+        guest.setGuestName( nameTextField.getName() );
+        guest.setGuestPhoneNumber ( phnNumberTextField.getText() );
+        guest.setGuestAdress(addressTextField.getText());
+        guest.setGuestGender("men");
+
         if(ae.getSource()==back) 
         {
             Frame4 f4=new Frame4();

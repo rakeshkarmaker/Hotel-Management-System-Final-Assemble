@@ -7,12 +7,17 @@ import java.time.format.DateTimeFormatter;
 
 public class Guest
 {
+	CheckOutCalculator checkoutcalculator = new CheckOutCalculator()
 	protected String guestName;
-	protected int guestPhoneNumber;
+	protected String guestPhoneNumber;
 	protected String guestGender;
 	protected String guestAddress;
 	protected String guestAgeType;
 	protected String checkOutDateString;
+	public void setTotalCostCalculator(CheckOutCalculator checkoutcalculator){
+		this.checkoutcalculator = checkoutcalculator;
+
+	}	public CheckOutCalculator getTotalCostCalculator(){  return checkoutcalculator }
 
 	public void SetCheckInTime(int daysOfStay) { //Will set the default check in time which is now and add the days of stay and set the checkout date and time.
 		LocalDate checkInDate = LocalDate.now(); //OUTPUT: 2022-02-02
@@ -38,11 +43,11 @@ public class Guest
 		return guestName;
 	}
 
-	public void setGuestPhoneNumber(int guestPhoneNumber)
+	public void setGuestPhoneNumber(String guestPhoneNumber)
 	{
 		this.guestPhoneNumber=guestPhoneNumber;
 	}
-	public int getGuestPhoneNumber()
+	public String getGuestPhoneNumber()
 	{
 		return guestPhoneNumber;
 	}

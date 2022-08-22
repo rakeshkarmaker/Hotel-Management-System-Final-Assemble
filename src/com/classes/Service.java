@@ -5,7 +5,6 @@ import com.interfaces.*;
 
 public abstract class Service extends HotelRoom
 {
-
 	protected String[] service=new String[4];
 	protected float[] serviceCost= new float[4];
 	protected float totalServiceCost=0;
@@ -34,10 +33,10 @@ public abstract class Service extends HotelRoom
 
 			switch (arr[i]){
 				case 0:
-					continue;
+					break;
 				case 1:
 					totalServiceCost = totalServiceCost + serviceCost[i];
-					continue;
+					break;
 
 				default:
 					throw new IllegalStateException("Unexpected value: " + arr[i]);

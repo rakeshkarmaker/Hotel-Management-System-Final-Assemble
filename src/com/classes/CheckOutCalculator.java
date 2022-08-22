@@ -27,7 +27,7 @@ public class CheckOutCalculator extends PackageAndDiscount {
 			case 1:
 				totalCost = 0;
 				totalCost = TotalPackageCost;
-
+				break;
 		}
 	} public float getTotalCost(){return totalCost;}
 

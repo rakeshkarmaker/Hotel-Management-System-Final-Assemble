@@ -6,10 +6,8 @@ import java.lang.*;
 public class Admin implements IAdmin{
 
     protected StringBuffer adminName = new StringBuffer("Rakesh Karmaker");
-
     protected StringBuffer myuserName = new StringBuffer("Admin");
     protected StringBuffer mypassword = new StringBuffer("AdminPass");
-
     protected StringBuffer securityQuestion = new StringBuffer("Cat");
 
     public void setAdminDetails(String adminName,String userName,String password,String securityQuestion) {

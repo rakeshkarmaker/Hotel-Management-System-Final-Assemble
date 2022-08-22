@@ -1,6 +1,7 @@
 package com;
 
 import com.classes.CheckOutCalculator;
+import com.classes.Guest;
 
 import java.lang.*;
 import java.awt.*;
@@ -23,27 +24,22 @@ public class Frame4 extends JFrame implements ActionListener,MouseListener
     JComboBox packageComboBox;
 
     protected int roomIndex = 0; //0
-    protected int acIndex = 0;
+    protected int acIndex = 1;
     protected int roomServiceIndex = 0;
     protected int foodBuffetIndex = 0;
     protected int laundryServiceIndex = 0 ;
     protected int transportationIndex =0 ;
-    protected int packageIndex =0 ;
+    protected int packageIndex = 0 ;
 
 
     public void  costCalc(){
         CheckOutCalculator calcObj = new CheckOutCalculator();
-        if (packageIndex == 0) {
             calcObj.TotalRoomCost(acIndex, roomIndex);
             calcObj.ServiceCostCalc(roomServiceIndex, foodBuffetIndex, laundryServiceIndex, transportationIndex);
             calcObj.CheckOutCalculator(0);
             totalCost.setText(String.valueOf(calcObj.getTotalCost()));
-
-        } else if (packageIndex >= 1 && packageIndex <=3){
-            calcObj.PackageCalculation(packageIndex);
-            calcObj.CheckOutCalculator(1);
-
-        } else{}
+            Guest guest = new Guest();
+            guest.setTotalCostCalculator(calcObj);
 
     }
 
@@ -293,63 +289,62 @@ public class Frame4 extends JFrame implements ActionListener,MouseListener
             cbFood.setSelected(true);
             cbTransport.setSelected(true);
 
-        } else if (royalSuite.isSelected()==true){
+        }  if (royalSuite.isSelected()==true){
             roomIndex = 0;
             acIndex = 1;
             ac.setSelected(true);
-            costCalc();
 
-        } else if (kingBed.isSelected()==true){
+        }  if (kingBed.isSelected()==true){
             roomIndex = 1;
             acIndex = 1;
             ac.setSelected(true);
-            costCalc();
 
-        } else if (twinBed.isSelected()==true){
+        }  if (twinBed.isSelected()==true){
             roomIndex = 2;
-            costCalc();
-
-        } else if (standard.isSelected()==true){
-            roomIndex = 3;
-            costCalc();
-
-        } else if (ac.isSelected()==true){ // AC index setting updated by rk
-            acIndex = 1;
-            costCalc();
-
-        }else if (nonAc.isSelected()==true){
             acIndex = 0;
             costCalc();
 
-        }else if (cbRoom.isSelected()==true){ //service index select setting updated by rk
-            roomServiceIndex = 1;
+        }  if (standard.isSelected()==true){
+            roomIndex = 3;
+            acIndex = 0;
             costCalc();
 
-        }else if (cbFood.isSelected()==true){
+        }  if (ac.isSelected()==true){ // AC index setting updated by rk
+            acIndex = 1;
+            costCalc();
+
+        } if (nonAc.isSelected()==true){
+            acIndex = 0;
+            costCalc();
+
+        } if (cbRoom.isSelected()==true){ //service index select setting updated by rk
+            roomServiceIndex = 1;
+            costCalc();
+        } if (cbFood.isSelected()==true){
             foodBuffetIndex = 1;
             costCalc();
 
-        }else if (cbLaundry.isSelected()==true){
+        } if (cbLaundry.isSelected()==true){
             laundryServiceIndex = 1;
             costCalc();
 
-        }else if (cbTransport.isSelected()==true){
+        } if (cbTransport.isSelected()==true){
             transportationIndex = 1;
             costCalc();
 
-        }else if (cbRoom.isSelected()==false){ //service index deselect setting updated by rk
+        } if (cbRoom.isSelected()==false){ //service index deselect setting updated by rk
             roomServiceIndex = 0;
             costCalc();
 
-        }else if (cbFood.isSelected()==false){
+        } if (cbFood.isSelected()==false){
             foodBuffetIndex = 0;
             costCalc();
 
-        }else if (cbLaundry.isSelected()==false){
+        } if (cbLaundry.isSelected()==false){
             laundryServiceIndex = 0;
             costCalc();
 
-        }else if (cbTransport.isSelected()==false){
+        } if (cbTransport.isSelected()==false){
             transportationIndex = 0;
             costCalc();
 
